@@ -1,0 +1,185 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Form2.aspx.cs" Inherits="Default2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>e-Project Online DB</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="background-image: url(back.JPG)">
+        <table style="width: 976px; height: 256px">
+            <tr>
+                <td style="width: 94px; height: 141px">
+                    <asp:Image ID="Image1" runat="server" Height="200px" ImageUrl="~/captionit134924I958D31.jpg"
+                        Width="192px" /></td>
+                <td style="background-image: url(back2.JPG); width: 1664px; height: 141px">
+                    <img src="pile_of_books.gif" style="width: 176px; height: 136px" />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="Maroon"
+                        Text="e-Project Online Database"></asp:Label>&nbsp;<br />
+                </td>
+            </tr>
+            <tr style="font-size: 12pt">
+                <td style="background-image: url(back2.JPG); width: 94px; height: 325px">
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<asp:HyperLink
+                        ID="HyperLink1" runat="server" Font-Bold="True" Font-Underline="True" ForeColor="Maroon"
+                        NavigateUrl="~/Form3.aspx" ToolTip="Click to view homepage" Width="50px">Home</asp:HyperLink>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp;<br />
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size: 10pt; font-family: Courier New">
+                        &nbsp; &nbsp;</span><asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True"
+                            Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form1.aspx" ToolTip="Click to login.">Login</asp:HyperLink><span
+                                style="font-size: 10pt; font-family: Courier New">&nbsp;<br />
+                                <br />
+                                <br />
+                            </span><span style="font-size: 10pt; font-family: Courier New">&nbsp;
+                                <br />
+                                &nbsp; &nbsp; &nbsp;</span><asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True"
+                                    Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form2.aspx" ToolTip="Click to register on this website">Register</asp:HyperLink><span
+                                        style="font-size: 10pt; font-family: Courier New">&nbsp;<br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        &nbsp; &nbsp; &nbsp;</span><asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True"
+                                            Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Search.aspx" ToolTip="Click to search the projects">Search</asp:HyperLink><span
+                                                style="font-size: 10pt; font-family: Courier New">&nbsp;<br />
+                                                <br />
+                                                <br />
+                                                <br />
+                                                &nbsp; &nbsp; &nbsp;</span><asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="True"
+                                                    Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form4.aspx" ToolTip="Click to see about us.">About Us</asp:HyperLink><span
+                                                        style="font-size: 10pt; font-family: Courier New">
+                                                        <br />
+                                                        <br />
+                                                    </span>
+                </td>
+                <td style="width: 1664px; height: 325px">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:Label ID="Label1"
+                        runat="server" Font-Bold="True" Font-Size="Large" Font-Underline="True" Text="Create an Account"></asp:Label><br />
+                    <br />
+                    <asp:Label ID="Label3" runat="server" Text=" Your Account gives you access to all the projects of the Database and other services.   If you already have an Account, you can go to Login page."
+                        Width="655px"></asp:Label><br />
+                    <asp:HyperLink ID="HyperLink6" runat="server" Font-Size="Smaller" Font-Underline="True"
+                        ForeColor="Maroon" NavigateUrl="~/Form1.aspx">Already Registered? Login</asp:HyperLink>&nbsp; &nbsp;<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <br />
+                    <table style="width: 660px; height: 333px">
+                        <tr>
+                            <td style="width: 1px; height: 1px">
+                                <asp:Label ID="Label8" runat="server" Text="First Name:" Width="96px" BackColor="Transparent" Font-Bold="True"></asp:Label>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp;&nbsp;&nbsp;</td>
+                            <td style="width: 101px; height: 1px">
+            <asp:TextBox ID="TextBox7" runat="server" Width="155px"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox7"
+                                    ErrorMessage="just write your first name" ForeColor="Maroon" ValidationExpression="\w+(\w)*"></asp:RegularExpressionValidator></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 1px; height: 15px">
+                                &nbsp; &nbsp; &nbsp;
+                                <asp:Label ID="Label9" runat="server" Text="Last Name:" Width="95px" BackColor="Transparent" Font-Bold="True"></asp:Label><br />
+                            </td>
+                            <td style="width: 101px; height: 15px">
+            <asp:TextBox ID="TextBox8" runat="server" Width="155px"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBox8"
+                                    ErrorMessage="just write your last name" ForeColor="Maroon" ValidationExpression="\w+(\w)*"></asp:RegularExpressionValidator></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 1px; height: 22px">
+                                &nbsp;&nbsp; 
+                                <asp:Label ID="Label4"
+                        runat="server" Font-Bold="True" Text="Gender:"></asp:Label><br />
+                            </td>
+                            <td style="width: 101px; height: 22px">
+                                <asp:RadioButtonList ID="RadioButtonList1" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" Width="161px">
+                                    <asp:ListItem>Male</asp:ListItem>
+                                    <asp:ListItem>Female</asp:ListItem>
+                                </asp:RadioButtonList></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 1px; height: 21px">
+                                &nbsp; &nbsp; &nbsp;&nbsp;
+                                <asp:Label ID="Label10" runat="server" Text="Username:" Width="94px" BackColor="Transparent" Font-Bold="True"></asp:Label><br />
+                            </td>
+                            <td style="width: 101px; height: 21px">
+            <asp:TextBox ID="TextBox9" runat="server" Width="155px"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 1px; height: 58px;">
+                                &nbsp; &nbsp; &nbsp;
+                                <asp:Label ID="Label13" runat="server" Text="Email ID:" Width="101px" Font-Bold="True" ToolTip="Enter Your E-Mail here."></asp:Label>&nbsp;<br />
+                            </td>
+                            <td style="width: 101px; height: 58px;">
+            <asp:TextBox ID="TextBox12" runat="server" Width="155px"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox12"
+                                    ErrorMessage="enter valid e-mail address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Maroon" Width="170px"></asp:RegularExpressionValidator></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 1px">
+                                &nbsp;&nbsp; 
+                                <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="Profession:"></asp:Label><br />
+                            </td>
+                            <td style="width: 101px">
+                                <asp:DropDownList
+                        ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                        <asp:ListItem>Student</asp:ListItem>
+                        <asp:ListItem>Teacher</asp:ListItem>
+                        <asp:ListItem>Engineer</asp:ListItem>
+                        <asp:ListItem>Doctor</asp:ListItem>
+                        <asp:ListItem>Other</asp:ListItem>
+                    </asp:DropDownList></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 1px">
+                                &nbsp;&nbsp; <asp:Label ID="Label11" runat="server" Text="Choose a password:" Width="137px" BackColor="Transparent" Font-Bold="True"></asp:Label><br />
+                            </td>
+                            <td style="width: 101px">
+            <asp:TextBox ID="TextBox10" runat="server" TextMode="Password" Width="155px"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 1px">
+                                &nbsp;&nbsp; 
+                                <asp:Label ID="Label12" runat="server" Text="Re-enter password:" Width="142px" Font-Bold="True"></asp:Label><br />
+                            </td>
+                            <td style="width: 101px">
+                                <asp:TextBox ID="TextBox11" runat="server" TextMode="Password" Width="155px"></asp:TextBox>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox10"
+                                    ControlToValidate="TextBox11" ErrorMessage="password mismatch" ForeColor="Maroon"></asp:CompareValidator></td>
+                        </tr>
+                    </table>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp;<asp:Button ID="Button2" runat="server" Width="164px" Text="Create Your Account" OnClick="Button1_Click" /><br />
+                    <br />
+                </td>
+            </tr>
+        </table>
+        <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;
+        <asp:Label ID="Label6" runat="server" Font-Size="Small" ForeColor="Maroon" Text="Designed by Students, B.Tech.(6th Sem), Computer Science and Engineering, MNNIT, Allahabad."></asp:Label><br />
+    
+    </div>
+    </form>
+</body>
+</html>

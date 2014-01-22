@@ -1,0 +1,115 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Data.Sql;
+using System.Data.SqlClient;
+
+public partial class NewSession : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            #region DELETE FROM newsession
+            string q = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True;User Instance=True";
+            SqlConnection con = new SqlConnection(q);
+            con.Open();
+            string s = "DELETE FROM newsession";
+            SqlCommand cmd = new SqlCommand(s, con);
+            SqlDataReader aread = cmd.ExecuteReader();
+            aread.Close();
+            con.Close();
+            #endregion DELETE FROM newsession
+
+            #region Insert session entry
+            string year = "20" + DropDownList1.SelectedItem.ToString();
+            string sem = DropDownList2.SelectedItem.ToString();
+            SqlConnection con1 = new SqlConnection(q);
+            con1.Open();
+            s = "INSERT INTO newsession values('" + year + "','" + sem + "')";
+            SqlCommand cmd1 = new SqlCommand(s, con1);
+            SqlDataReader aread1 = cmd1.ExecuteReader();
+            Int32 val = Int32.Parse(DropDownList1.SelectedItem.ToString()) + 1;
+            Label5.Text = " New Session Started: " + year + "-" + val.ToString() + "(" + DropDownList2.SelectedItem.ToString() + ")";
+            aread1.Close();
+            con1.Close();
+            #endregion Insert session entry
+
+
+            float prev_bal = 0, eldue, sessionadd, bal;
+            SqlConnection con2 = new SqlConnection(q);
+            con2.Open();
+            string s2 = "select TeacherID from Master";
+            SqlCommand cmd2 = new SqlCommand(s2, con2);
+            SqlDataReader aread2 = cmd2.ExecuteReader();
+            while (aread2.Read())
+            {
+                string tid = aread2.GetString(0).ToString();
+
+                SqlConnection con4 = new SqlConnection(q);
+                con4.Open();
+                string s4 = " SELECT Balance FROM " + tid + " WHERE RecordID = (SELECT MAX(RecordID) FROM " + tid + ")";
+                SqlCommand cmd4 = new SqlCommand(s4, con4);
+                SqlDataReader aread4 = cmd4.ExecuteReader();
+                if (aread4.Read())
+                {
+                    prev_bal = float.Parse(aread4.GetString(0).ToString());
+                }
+                aread4.Close();
+                con4.Close();
+
+                eldue = prev_bal;
+                sessionadd = 15;
+                bal = eldue + sessionadd;
+
+                if (bal > 300)
+                {
+                    sessionadd = 0;
+                    bal = 300;
+                    SqlConnection con3 = new SqlConnection(q);
+                    con3.Open();
+                    string s3 = "INSERT INTO " + tid + "(VacType,DayFrom,MonthFrom,YearFrom,DayTo,MonthTo,YearTo,Days,EL_due,Sanction,EL_Add,Balance) values('New Session Started','0','0','0','0','0','0','0','" + eldue.ToString() + "','0','" + sessionadd.ToString() + "','" + bal.ToString() + "')";
+                    SqlCommand cmd3 = new SqlCommand(s3, con3);
+                    SqlDataReader aread3 = cmd3.ExecuteReader();
+                    aread3.Close();
+                    con3.Close();
+                    prev_bal = 0; eldue = 0; sessionadd = 0; bal = 0;
+                }
+                else
+                {
+                    SqlConnection con3 = new SqlConnection(q);
+                    con3.Open();
+                    string s3 = "INSERT INTO " + tid + "(VacType,DayFrom,MonthFrom,YearFrom,DayTo,MonthTo,YearTo,Days,EL_due,Sanction,EL_Add,Balance) values('New Session Started','0','0','0','0','0','0','0','" + eldue.ToString() + "','0','" + sessionadd.ToString() + "','" + bal.ToString() + "')";
+                    SqlCommand cmd3 = new SqlCommand(s3, con3);
+                    SqlDataReader aread3 = cmd3.ExecuteReader();
+                    aread3.Close();
+                    con3.Close();
+                    prev_bal = 0; eldue = 0; sessionadd = 0; bal = 0;
+                }
+            }
+            aread2.Close();
+            con2.Close();
+        }
+        catch (NullReferenceException ex)
+        {
+            Response.Redirect("AdminLogin.aspx");
+        }
+
+    }
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        Session.Remove("admin");
+        Response.Redirect("AdminLogin.aspx");
+    }
+}

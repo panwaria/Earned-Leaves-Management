@@ -1,0 +1,171 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Data.Sql;
+//using System.Data;
+using System.Data.SqlClient;
+
+ 
+
+public partial class _Default : System.Web.UI.Page 
+{
+
+    static   string s1;
+    static   string xyz;
+    static string project1;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+       //TextBox2.Text = "";
+        //TextBox5.Text = "";
+        //TextBox6.Text = "";
+       // DropDownList1.Visible = true;
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {   string q ="Data Source=.\\SQLEXPRESS;"+"AttachDbFilename="+"C:\\Documents and Settings\\Ron$\\Desktop\\SE_FINAL\\App_Data\\Database.mdf"+";Integrated Security=True;Connect Timeout=30;User Instance=True";
+        SqlConnection con = new SqlConnection(q);
+        SqlConnection con2 = new SqlConnection(q);
+        con.Open();
+        con2.Open();
+        s1 = TextBox5.Text.ToString ();
+        xyz = s1;
+        
+        string s2 = TextBox6.Text.ToString ();
+        string s="SELECT * from description "+"where username = '"+s1+"' and password= '"+s2+"'";
+        //string uname= "SELECT author from description "+" where username ='"+s1+"'";
+        SqlCommand cmd = new SqlCommand(s, con);
+        //SqlCommand cmd2 = new SqlCommand(uname, con);
+       SqlDataReader aread =cmd.ExecuteReader();
+       // SqlDataReader uread = cmd2.ExecuteReader();
+       
+        if(aread.Read ())
+        {
+           
+            Label15.Visible = false;
+            Label3.Visible = true;
+            HyperLink7.Visible = true;
+            Label1.Visible = true;
+            Label2.Visible = true;
+            //TextBox1.Visible = true;
+            Label9.Visible = false;
+            Label10.Visible = false;
+            TextBox5.Visible = false;
+             TextBox6.Visible = false;
+             HyperLink2.Visible = false;
+             HyperLink8.Visible = false;
+             HyperLink6.Visible = true;
+             Button3.Visible = false;
+             Label8.Visible = false;
+            HyperLink3.Visible=false;
+            Label13.Visible = true;
+            HyperLink2.Visible = false;
+            HyperLink6.Visible = true;
+            DropDownList.Visible = true;
+            LinkButton1.Visible = true;
+            Label6.Visible = true;
+        
+      
+
+            
+            string uname = "SELECT author from description " + " where username ='" + s1 + "'";
+            SqlCommand cmd2 = new SqlCommand(uname, con2);
+            SqlDataReader uread = cmd2.ExecuteReader();
+            if (uread.Read())
+            {
+                //st=1;
+               // Label15.Visible = false;
+                string author = uread.GetString(0);
+                Label3.Text = s1;
+                Label5.Text = author;
+                //Label7.Visible = true;
+                //TextBox1.Visible = true;
+
+            }
+            
+            uread.Close();
+            con2.Close();
+           
+            SqlConnection con1 = new SqlConnection(q);
+            con1.Open();
+            string s3 = "SELECT project FROM [user] "+" where username = '"+s1+"'";
+            SqlCommand cmd1 = new SqlCommand(s3, con1);
+            SqlDataReader aread1 = cmd1.ExecuteReader();
+            int i=0;
+            while (aread1.Read())
+            {
+                DropDownList.Items.Insert(i, aread1.GetString(0));
+            }
+            //Response.Redirect("Home.aspx");
+
+            
+        }
+        //if (st == 1)
+        //{  }
+        else
+        {
+            Label15.Visible = true;
+            Label15.Text = "wrong username or password";
+        }
+        aread.Close();
+        con.Close(); 
+        
+    }
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        DropDownList.Visible = false;
+        Label1.Visible = false;
+        Label7.Visible = true;
+        TextBox2.Visible = true;
+        FileUpload1.Visible = true;
+        Button1.Visible = true;
+        DropDownList2.Visible = true;
+        Label11.Visible = true;
+        Label12.Visible = true; 
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string file = FileUpload1.FileName;
+        string q = "Data Source=.\\SQLEXPRESS;" + "AttachDbFilename=" + "C:\\Documents and Settings\\Ron$\\Desktop\\SE_FINAL\\App_Data\\Database.mdf" + ";Integrated Security=True;Connect Timeout=30;User Instance=True";
+        SqlConnection cons = new SqlConnection(q);
+        project1 = TextBox2.Text.ToString();
+        //Label4.Text = project1;
+        TextBox2.Text = project1;
+        string username = s1;
+        //TextBox2.Text = xyz;
+        string category = DropDownList2.SelectedItem.ToString();
+        string time =DateTime.Now.ToString ();
+        cons.Open();
+        string s = "Insert into [user] values ('" +project1+"','" + username + "','" + file+ "','" + category+ "','" +time + "')";
+        SqlCommand cmd = new SqlCommand(s, cons);
+        SqlDataReader dr = cmd.ExecuteReader();
+        dr.Close();
+        cons.Close();
+              
+        //Label7.Text = file;
+        FileUpload1.PostedFile.SaveAs("C:\\temp\\"+file);
+        Label7.Visible = false;
+        TextBox2.Visible = false;
+        FileUpload1.Visible = false;
+        Button1.Visible = false;
+        DropDownList2.Visible = false;
+        Label11.Visible = false;
+        Label12.Visible = false;
+        DropDownList.Visible = true;
+        Label1.Visible = true;
+    }
+
+
+  
+}
+
+
+    
+

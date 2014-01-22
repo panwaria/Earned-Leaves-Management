@@ -1,0 +1,146 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="NewSession.aspx.cs" Inherits="NewSession" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>New Session</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Panel ID="Panel1" runat="server" Height="609px" Style="background-image: url(web2.bmp)"
+            Width="920px">
+            <table style="width: 919px; height: 573px">
+                <tr>
+                    <td style="width: 141px; height: 93px">
+                    </td>
+                    <td style="height: 93px; font-weight: normal; font-size: 24pt; color: white; font-family: Arial;">
+                        &nbsp; &nbsp; &nbsp; &nbsp; Motilal Nehru National Institute of Technology</td>
+                </tr>
+                <tr>
+                    <td style="width: 141px; height: 98px">
+                        <table>
+                            <tr>
+                                <td style="width: 137px">
+                                    &nbsp; &nbsp; &nbsp;
+                                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Bold="True" Font-Names="Arial"
+                                        Font-Size="Medium" ForeColor="Navy" OnClick="LinkButton1_Click">Home</asp:LinkButton></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 137px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 137px; height: 21px">
+                                    &nbsp; &nbsp; &nbsp;
+                                    <asp:LinkButton ID="LinkButton1" runat="server" Font-Bold="True" Font-Names="Arial"
+                                        Font-Size="Medium" ForeColor="Navy" OnClick="LinkButton1_Click">Logout</asp:LinkButton></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="height: 98px">
+                        &nbsp; &nbsp;&nbsp;<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                        <asp:Label ID="Label4" runat="server" Font-Bold="False" Font-Names="Arial" Font-Size="Large"
+                            Font-Underline="True" ForeColor="Maroon" Text="Setting up a new 'Session'"></asp:Label><br />
+                        <br />
+                        <br />
+                        <table>
+                            <tr>
+                                <td style="width: 90px; height: 34px">
+                                </td>
+                                <td style="width: 90px; height: 34px">
+                                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="Medium"
+                                        ForeColor="Navy" Text="Year:"></asp:Label></td>
+                                <td style="width: 202px; height: 34px">
+                                    <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="Medium"
+                                        ForeColor="Maroon" Text="20-"></asp:Label>
+                                    <asp:DropDownList ID="DropDownList1" runat="server" Font-Bold="True" Font-Size="Medium"
+                                        ForeColor="Maroon">
+                                        <asp:ListItem>07</asp:ListItem>
+                                        <asp:ListItem>08</asp:ListItem>
+                                        <asp:ListItem>09</asp:ListItem>
+                                        <asp:ListItem>10</asp:ListItem>
+                                        <asp:ListItem>11</asp:ListItem>
+                                        <asp:ListItem>12</asp:ListItem>
+                                        <asp:ListItem>13</asp:ListItem>
+                                        <asp:ListItem>14</asp:ListItem>
+                                        <asp:ListItem>15</asp:ListItem>
+                                        <asp:ListItem>16</asp:ListItem>
+                                        <asp:ListItem>17</asp:ListItem>
+                                        <asp:ListItem>18</asp:ListItem>
+                                        <asp:ListItem>19</asp:ListItem>
+                                        <asp:ListItem>20</asp:ListItem>
+                                        <asp:ListItem>21</asp:ListItem>
+                                        <asp:ListItem>22</asp:ListItem>
+                                        <asp:ListItem>23</asp:ListItem>
+                                        <asp:ListItem>24</asp:ListItem>
+                                        <asp:ListItem>25</asp:ListItem>
+                                        <asp:ListItem>26</asp:ListItem>
+                                        <asp:ListItem>27</asp:ListItem>
+                                        <asp:ListItem>28</asp:ListItem>
+                                        <asp:ListItem>29</asp:ListItem>
+                                        <asp:ListItem>30</asp:ListItem>
+                                        <asp:ListItem>31</asp:ListItem>
+                                        <asp:ListItem>32</asp:ListItem>
+                                        <asp:ListItem>33</asp:ListItem>
+                                        <asp:ListItem>34</asp:ListItem>
+                                        <asp:ListItem>35</asp:ListItem>
+                                        <asp:ListItem>36</asp:ListItem>
+                                        <asp:ListItem>37</asp:ListItem>
+                                        <asp:ListItem>38</asp:ListItem>
+                                        <asp:ListItem>39</asp:ListItem>
+                                        <asp:ListItem>40</asp:ListItem>
+                                        <asp:ListItem>41</asp:ListItem>
+                                        <asp:ListItem>42</asp:ListItem>
+                                        <asp:ListItem>43</asp:ListItem>
+                                        <asp:ListItem>44</asp:ListItem>
+                                        <asp:ListItem>45</asp:ListItem>
+                                        <asp:ListItem>46</asp:ListItem>
+                                        <asp:ListItem>47</asp:ListItem>
+                                        <asp:ListItem>48</asp:ListItem>
+                                        <asp:ListItem>49</asp:ListItem>
+                                        <asp:ListItem>50</asp:ListItem>
+                                    </asp:DropDownList></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 90px; height: 32px">
+                                </td>
+                                <td style="width: 90px; height: 32px">
+                                    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="Medium"
+                                        ForeColor="Navy" Text="Semester: "></asp:Label></td>
+                                <td style="width: 202px; height: 32px">
+                                    <asp:DropDownList ID="DropDownList2" runat="server" Font-Bold="True" Font-Size="Medium"
+                                        ForeColor="Maroon">
+                                        <asp:ListItem>1</asp:ListItem>
+                                        <asp:ListItem>2</asp:ListItem>
+                                    </asp:DropDownList></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 90px; height: 31px">
+                                </td>
+                                <td style="width: 90px; height: 31px">
+                                </td>
+                                <td style="width: 202px; height: 31px">
+                                    <asp:Button ID="Button1" runat="server" Font-Bold="True" ForeColor="Navy" OnClick="Button1_Click"
+                                        Text="Start New Session" /></td>
+                            </tr>
+                        </table>
+                        <br />
+                        <asp:Label ID="Label5" runat="server" Font-Bold="True" ForeColor="Maroon"></asp:Label><br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+    
+    </div>
+    </form>
+</body>
+</html>

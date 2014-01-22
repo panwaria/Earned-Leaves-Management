@@ -1,0 +1,134 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.IO;
+
+
+public partial class Display : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    { 
+        
+    }
+    
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string s = TextBox1.Text.ToString();
+        string file="";
+        string s1 = TextBox2.Text.ToString();
+        string q = "Data Source=.\\SQLEXPRESS;" + "AttachDbFilename=" + "C:\\Documents and Settings\\Ron$\\Desktop\\SE_FINAL\\App_Data\\Database.mdf" + ";Integrated Security=True;Connect Timeout=30;User Instance=True";
+        SqlConnection con = new SqlConnection(q);
+        con.Open();
+        string r = "Select filename from [user] where username= '" + s + "' and project = '" + s1 + "'";
+        SqlCommand cmd = new SqlCommand(r, con);
+        SqlDataReader dr = cmd.ExecuteReader();
+        int st = 0;
+        while (dr.Read())
+        {
+
+            st = 1;
+            
+                       
+             file = dr.GetString(0);
+             
+            break;
+        }
+        if (st == 1)
+        {
+            TextBox4.Text = "";
+            Label3.Visible = true;
+            TextBox4.Visible = true;
+            Label3.Text = "The content of the file " + file + " is:";
+            string file1 = "C:\\temp\\" + file;
+            FileStream fs = new FileStream(file1, FileMode.Open, FileAccess.Read);
+            if (!(file.Contains(".txt") || file.Contains(".doc")))
+            {
+                Label3.Visible = true;
+                TextBox4.Visible = false;
+                Label3.Text = "The file "+file+" is not readable, please download";                
+                
+            }
+            if (file.Contains(".txt") || file.Contains(".txt"))
+            {
+                StreamReader sr = new StreamReader(fs);
+                string final = "";
+                string nextline;
+                while ((nextline = sr.ReadLine()) != null)
+                {
+                    final = final + nextline + "\n";
+
+                }
+                TextBox4.Text = final;
+               
+                sr.Close();
+            }
+        }
+        if (st == 0)
+        {
+            Label3.Visible = true;
+            Label3.Text = "No items to show corresponding to your request. ";
+        }
+        dr.Close();
+        con.Close();
+       
+       
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        TextBox4.Visible = false;
+        string s = TextBox1.Text.ToString();
+        string file = "";
+        string s1 = TextBox2.Text.ToString();
+        string q = "Data Source=.\\SQLEXPRESS;" + "AttachDbFilename=" + "C:\\Documents and Settings\\Ron$\\Desktop\\SE_FINAL\\App_Data\\Database.mdf" + ";Integrated Security=True;Connect Timeout=30;User Instance=True";
+        SqlConnection con = new SqlConnection(q);
+        con.Open();
+        string r = "Select filename from [user] where username= '" + s + "' and project = '" + s1 + "'";
+        SqlCommand cmd = new SqlCommand(r, con);
+        SqlDataReader dr = cmd.ExecuteReader();
+        int st = 0;
+        while (dr.Read())
+        {
+            st = 1;
+
+            file = dr.GetString(0);
+           
+            break;
+        }
+        if (st == 1)
+        {
+            Label3.Visible = true;
+            Label3.Text = "The  file" + file + " is being downloaded. ";
+            string file1 = "C:\\temp\\" + file;
+            FileInfo fs = new FileInfo(file1);
+            if (fs.Exists)
+            {
+                Response.Clear();
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + fs.Name);
+                Response.AddHeader("Content-Length", fs.Length.ToString());
+                Response.ContentType = "application/octet-stream";
+                Response.WriteFile(fs.FullName);
+                Response.End();
+            }
+        }
+        if(st==0)
+        {
+            Label3.Visible = true;
+            Label3.Text = "The file is not available in the databse.";
+        }
+
+
+       
+        dr.Close();
+        con.Close();
+        
+    }
+}

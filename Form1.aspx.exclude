@@ -1,0 +1,191 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Form1.aspx.cs" Inherits="_Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>e-Project Online DB</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-image: url(back.JPG)">
+            <table style="width: 976px; height: 320px">
+                <tr>
+                    <td style="width: 138px; height: 134px">
+                        <asp:Image ID="Image1" runat="server" Height="205px" ImageUrl="~/captionit134924I958D31.jpg"
+                            Width="232px" style="background-image: url(captionit134924I958D31.jpg)" /></td>
+                    <td style="background-image: url(back2.JPG); height: 134px; width: 726px;">
+                        &nbsp; 
+                        <img src="pile_of_books.gif" style="width: 176px; height: 136px" />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <asp:Label ID="Label4" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="Maroon"
+                            Text="e-Project Online Database"></asp:Label></td>
+                </tr>
+                <tr style="font-size: 12pt">
+                    <td style="background-image: url(back2.JPG); width: 138px; height: 473px">
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:HyperLink ID="HyperLink1" runat="server"
+                            Font-Bold="True" Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form3.aspx"
+                            Width="50px">Home</asp:HyperLink>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;<br />
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:HyperLink ID="HyperLink2" runat="server"
+                            Font-Bold="True" Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form1.aspx">Login</asp:HyperLink>&nbsp;<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink6" runat="server" Font-Bold="True" Font-Underline="True"
+                            ForeColor="Maroon" NavigateUrl="~/Form3.aspx" Visible="False">Logout</asp:HyperLink>&nbsp;<br />
+                        <br />
+                        &nbsp;
+                        <br />
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                        <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Underline="True"
+                            ForeColor="Maroon" NavigateUrl="~/Form2.aspx">Register</asp:HyperLink><br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:LinkButton ID="LinkButton1"
+                            runat="server" Font-Bold="True" ForeColor="Maroon" OnClick="LinkButton1_Click" Visible="False">Submit Your Project </asp:LinkButton><br />
+                        <br />
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                        <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Underline="True"
+                            ForeColor="Maroon" NavigateUrl="~/Search.aspx">Search</asp:HyperLink>&nbsp;<br />
+                        <br />
+                        &nbsp; &nbsp; &nbsp;&nbsp;
+                        <br />
+                        &nbsp; &nbsp; &nbsp;&nbsp; 
+                        <asp:HyperLink ID="HyperLink7" runat="server" Font-Bold="True" ForeColor="Maroon"
+                            NavigateUrl="~/Display.aspx" Visible="False">View the projects</asp:HyperLink>
+                        &nbsp; &nbsp;&nbsp;<br />
+                        &nbsp;<br />
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<asp:HyperLink ID="HyperLink5" runat="server"
+                            Font-Bold="True" Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form4.aspx">About Us</asp:HyperLink>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="height: 473px; color: black; width: 726px;">
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp;
+                        <asp:Label ID="Label8" runat="server" Font-Bold="True" Font-Underline="True" Text="Login"></asp:Label><br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <asp:Label ID="Label2" runat="server" Text="Welcome" Visible="False" Font-Bold="True" ForeColor="Maroon" Font-Size="Larger"></asp:Label>&nbsp;
+                        <asp:Label ID="Label5" runat="server" Font-Bold="True" ForeColor="Black" Font-Size="Larger"></asp:Label>
+                        &nbsp; &nbsp;<asp:Label ID="Label6" runat="server" Text="Your USER ID is" Visible="False" Font-Bold="True" ForeColor="Maroon" Font-Size="Larger"></asp:Label>
+                        &nbsp;
+                        <asp:Label ID="Label3" runat="server" Visible="False" Width="80px" Font-Bold="True" ForeColor="Black" Font-Size="Larger"></asp:Label>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp; &nbsp; &nbsp;
+                        <asp:Label ID="Label9" runat="server" Font-Bold="True" Font-Underline="True" Text="Username"></asp:Label>
+                        &nbsp; &nbsp; &nbsp;<asp:TextBox ID="TextBox5" runat="server" Width="152px"></asp:TextBox>&nbsp;<br />
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp; &nbsp; &nbsp;
+                        <asp:Label ID="Label10" runat="server" Font-Bold="True" Font-Underline="True" Text="Password"></asp:Label>
+                        &nbsp; &nbsp; &nbsp;&nbsp;<asp:TextBox ID="TextBox6" runat="server" TextMode="Password" Width="152px"></asp:TextBox>&nbsp;<asp:Label
+                            ID="Label15" runat="server" Text="Label" Visible="False"></asp:Label>
+                        &nbsp;
+                        &nbsp;&nbsp;<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;
+                        <asp:HyperLink ID="HyperLink8" runat="server" Font-Size="XX-Small" Font-Underline="True"
+                            ForeColor="Maroon" NavigateUrl="~/Form2.aspx" TabIndex="1">New User ?</asp:HyperLink><br />
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;<br />
+                        &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp;<asp:Button ID="Button3" runat="server" TabIndex="2" Text="Submit" OnClick="Button3_Click" /><br />
+                        &nbsp; &nbsp;
+                        <asp:Label ID="Label13" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="Larger"
+                            Height="56px" Text="This is the 'e-project online database' , where you can view your projects and add new projects as well. You can search your favourite projects  that are present  in the database on the basis of 'category' and the 'name of the author'. The links given below will help you find your choices."
+                            Visible="False" Width="632px" ForeColor="Black"></asp:Label><br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                        <br />
+                        <br />
+                        &nbsp; &nbsp;
+                        <asp:Label ID="Label1" runat="server" Text="Your Projects :" Visible="False"
+                            Width="120px" Font-Bold="True" ForeColor="Maroon"></asp:Label>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="DropDownList" runat="server"
+                            Visible="False" Width="152px">
+                        </asp:DropDownList><br />
+                        <br />
+                        <br />
+                        &nbsp; &nbsp; <asp:Label ID="Label7" runat="server" Text="Name of Project:"
+                            Visible="False" Font-Bold="True" ForeColor="Maroon"></asp:Label>
+                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                        <asp:TextBox ID="TextBox2" runat="server" Visible="False"></asp:TextBox>
+                        &nbsp;<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;&nbsp;<br />
+                        &nbsp; &nbsp;
+                        <asp:Label ID="Label11" runat="server" Text="Category:" Visible="False" Font-Bold="True" ForeColor="Maroon"></asp:Label>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<asp:DropDownList
+                            ID="DropDownList2" runat="server" DataTextField="category" DataValueField="category" ToolTip="Choose Your Category."
+                            Visible="False" Width="176px">
+                            <asp:ListItem>Computer Science</asp:ListItem>
+                            <asp:ListItem>Information Technology</asp:ListItem>
+                            <asp:ListItem>Mechanics</asp:ListItem>
+                            <asp:ListItem>BioTech</asp:ListItem>
+                            <asp:ListItem>Neurology</asp:ListItem>
+                            <asp:ListItem>Physiotherapy</asp:ListItem>
+                            <asp:ListItem>Nanotechnology</asp:ListItem>
+                            <asp:ListItem>Electronics</asp:ListItem>
+                            <asp:ListItem>Civil </asp:ListItem>
+                            <asp:ListItem>Production</asp:ListItem>
+                            <asp:ListItem>Chemistry</asp:ListItem>
+                            <asp:ListItem>Physics</asp:ListItem>
+                            <asp:ListItem>Zoology</asp:ListItem>
+                            <asp:ListItem>Biology</asp:ListItem>
+                            <asp:ListItem>Management</asp:ListItem>
+                            <asp:ListItem>Psychology</asp:ListItem>
+                        </asp:DropDownList>
+                        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br />
+                        <br />
+                        <br />
+                        &nbsp; &nbsp;
+                        <asp:Label ID="Label12" runat="server" Font-Bold="True" ForeColor="Maroon" Text="Upload Your File Here:"
+                            Visible="False"></asp:Label>
+                        &nbsp;
+                        <asp:FileUpload ID="FileUpload1" runat="server" Visible="False" /><br />
+                        <br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                        <asp:Button ID="Button1" runat="server" Text="Submit" Width="112px" Visible="False" OnClick="Button1_Click" />&nbsp;<br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        &nbsp; &nbsp;</td>
+                </tr>
+            </table>
+            &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; <asp:Label ID="Label14" runat="server" Font-Size="Small" ForeColor="Maroon" Text="Designed by Students, B.Tech.(6th Sem), Computer Science and Engineering, MNNIT, Allahabad."></asp:Label>&nbsp;&nbsp;&nbsp;</div>
+    </form>
+</body>
+</html>

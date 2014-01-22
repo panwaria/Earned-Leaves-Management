@@ -1,0 +1,196 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Entries_DutyOnVac.aspx.cs" Inherits="Entries" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table style="width: 976px; height: 254px">
+            <tr>
+                <td style="width: 109px; height: 130px">
+                </td>
+                <td style="background-image: url(back2.JPG); width: 574px; height: 130px">
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                    <asp:Label ID="Label4" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Maroon"
+                        Text="Management of Earned Leaves for Teaching Staff"></asp:Label></td>
+            </tr>
+            <tr style="font-size: 12pt; color: #000000">
+                <td style="background-image: url(back2.JPG); width: 109px; height: 473px">
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:HyperLink ID="HyperLink1" runat="server"
+                        Font-Bold="True" Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form3.aspx"
+                        Width="50px">Home</asp:HyperLink>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp;<br />
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:HyperLink ID="HyperLink2" runat="server"
+                        Font-Bold="True" Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form1.aspx">Login</asp:HyperLink>&nbsp;<br />
+                    <br />
+                    <br />
+                    &nbsp;
+                    <br />
+                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Underline="True"
+                        ForeColor="Maroon" NavigateUrl="~/Form2.aspx">Register</asp:HyperLink>&nbsp;<br />
+                    <br />
+                    <br />
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Underline="True"
+                        ForeColor="Maroon" NavigateUrl="~/Search.aspx">Search</asp:HyperLink>&nbsp;<br />
+                    <br />
+                    <br />
+                    <br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<asp:HyperLink ID="HyperLink5" runat="server"
+                        Font-Bold="True" Font-Underline="True" ForeColor="Maroon" NavigateUrl="~/Form4.aspx">About Us</asp:HyperLink>
+                    <br />
+                    <br />
+                </td>
+                <td style="width: 574px; height: 473px">
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<table
+                        style="width: 424px">
+                        <tr>
+                            <td style="width: 273px; height: 40px">
+                                <asp:Label ID="Label1" runat="server" Text="Type of Vacation :"></asp:Label></td>
+                            <td style="width: 499px; height: 40px">
+                                <asp:DropDownList ID="DropDownList1" runat="server">
+                                    <asp:ListItem>Summer Vacation</asp:ListItem>
+                                    <asp:ListItem>Winter Vacation</asp:ListItem>
+                                </asp:DropDownList></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 273px; height: 40px">
+                                </td>
+                            <td style="width: 499px; height: 40px">
+                                </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 273px; height: 40px">
+                                <asp:Label ID="Label3" runat="server" Text="Duty from :"></asp:Label></td>
+                            <td style="width: 499px; height: 40px">
+                                <asp:DropDownList ID="DropDownList2" runat="server" Width="52px">
+                                    <asp:ListItem>1</asp:ListItem>
+                                    <asp:ListItem>2</asp:ListItem>
+                                    <asp:ListItem>3</asp:ListItem>
+                                    <asp:ListItem>4</asp:ListItem>
+                                    <asp:ListItem>5</asp:ListItem>
+                                    <asp:ListItem>6</asp:ListItem>
+                                    <asp:ListItem>7</asp:ListItem>
+                                    <asp:ListItem>8</asp:ListItem>
+                                    <asp:ListItem>9</asp:ListItem>
+                                    <asp:ListItem>10</asp:ListItem>
+                                    <asp:ListItem>11</asp:ListItem>
+                                    <asp:ListItem>12</asp:ListItem>
+                                    <asp:ListItem>13</asp:ListItem>
+                                    <asp:ListItem>14</asp:ListItem>
+                                    <asp:ListItem>15</asp:ListItem>
+                                    <asp:ListItem>16</asp:ListItem>
+                                    <asp:ListItem>17</asp:ListItem>
+                                    <asp:ListItem>18</asp:ListItem>
+                                    <asp:ListItem>19</asp:ListItem>
+                                    <asp:ListItem>20</asp:ListItem>
+                                    <asp:ListItem>21</asp:ListItem>
+                                    <asp:ListItem>22</asp:ListItem>
+                                    <asp:ListItem>23</asp:ListItem>
+                                    <asp:ListItem>24</asp:ListItem>
+                                    <asp:ListItem>25</asp:ListItem>
+                                    <asp:ListItem>26</asp:ListItem>
+                                    <asp:ListItem>27</asp:ListItem>
+                                    <asp:ListItem>28</asp:ListItem>
+                                    <asp:ListItem>29</asp:ListItem>
+                                    <asp:ListItem>30</asp:ListItem>
+                                    <asp:ListItem>31</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList3" runat="server" Width="60px">
+                                    <asp:ListItem>Jan</asp:ListItem>
+                                    <asp:ListItem>Feb</asp:ListItem>
+                                    <asp:ListItem>Mar</asp:ListItem>
+                                    <asp:ListItem>Apr</asp:ListItem>
+                                    <asp:ListItem>May</asp:ListItem>
+                                    <asp:ListItem>Jun</asp:ListItem>
+                                    <asp:ListItem>Jul</asp:ListItem>
+                                    <asp:ListItem>Aug</asp:ListItem>
+                                    <asp:ListItem>Sep</asp:ListItem>
+                                    <asp:ListItem>Oct</asp:ListItem>
+                                    <asp:ListItem>Nov</asp:ListItem>
+                                    <asp:ListItem>Dec</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:Label ID="Label7" runat="server" Text="Year:"></asp:Label>
+                                <asp:TextBox ID="TextBox2" runat="server" Width="66px"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 273px; height: 40px">
+                                <asp:Label ID="Label5" runat="server" Text="Duty upto :"></asp:Label></td>
+                            <td style="width: 499px; height: 40px">
+                                <asp:DropDownList ID="DropDownList4" runat="server" Width="52px">
+                                    <asp:ListItem>1</asp:ListItem>
+                                    <asp:ListItem>2</asp:ListItem>
+                                    <asp:ListItem>3</asp:ListItem>
+                                    <asp:ListItem>4</asp:ListItem>
+                                    <asp:ListItem>5</asp:ListItem>
+                                    <asp:ListItem>6</asp:ListItem>
+                                    <asp:ListItem>7</asp:ListItem>
+                                    <asp:ListItem>8</asp:ListItem>
+                                    <asp:ListItem>9</asp:ListItem>
+                                    <asp:ListItem>10</asp:ListItem>
+                                    <asp:ListItem>11</asp:ListItem>
+                                    <asp:ListItem>12</asp:ListItem>
+                                    <asp:ListItem>13</asp:ListItem>
+                                    <asp:ListItem>14</asp:ListItem>
+                                    <asp:ListItem>15</asp:ListItem>
+                                    <asp:ListItem>16</asp:ListItem>
+                                    <asp:ListItem>17</asp:ListItem>
+                                    <asp:ListItem>18</asp:ListItem>
+                                    <asp:ListItem>19</asp:ListItem>
+                                    <asp:ListItem>20</asp:ListItem>
+                                    <asp:ListItem>21</asp:ListItem>
+                                    <asp:ListItem>22</asp:ListItem>
+                                    <asp:ListItem>23</asp:ListItem>
+                                    <asp:ListItem>24</asp:ListItem>
+                                    <asp:ListItem>25</asp:ListItem>
+                                    <asp:ListItem>26</asp:ListItem>
+                                    <asp:ListItem>27</asp:ListItem>
+                                    <asp:ListItem>28</asp:ListItem>
+                                    <asp:ListItem>29</asp:ListItem>
+                                    <asp:ListItem>30</asp:ListItem>
+                                    <asp:ListItem>31</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList5" runat="server" Width="60px">
+                                    <asp:ListItem>Jan</asp:ListItem>
+                                    <asp:ListItem>Feb</asp:ListItem>
+                                    <asp:ListItem>Mar</asp:ListItem>
+                                    <asp:ListItem>Apr</asp:ListItem>
+                                    <asp:ListItem>May</asp:ListItem>
+                                    <asp:ListItem>Jun</asp:ListItem>
+                                    <asp:ListItem>Jul</asp:ListItem>
+                                    <asp:ListItem>Aug</asp:ListItem>
+                                    <asp:ListItem>Sep</asp:ListItem>
+                                    <asp:ListItem>Oct</asp:ListItem>
+                                    <asp:ListItem>Nov</asp:ListItem>
+                                    <asp:ListItem>Dec</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:Label ID="Label8" runat="server" Text="Year:"></asp:Label>
+                                <asp:TextBox ID="TextBox3" runat="server" Width="66px"></asp:TextBox></td>
+                        </tr>
+                    </table>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <asp:Button ID="Button1" runat="server" Text="Submit" /></td>
+            </tr>
+        </table>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+        <asp:Label ID="Label6" runat="server" Font-Size="Small" ForeColor="Maroon" Text="Designed by Students, B.Tech.(6th Sem), Computer Science and Engineering, MNNIT, Allahabad."></asp:Label></div>
+    </form>
+</body>
+</html>
